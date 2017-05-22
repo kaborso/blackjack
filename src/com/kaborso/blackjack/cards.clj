@@ -11,12 +11,12 @@
   (take 9 (drop 2 (range))))
 
 (defn face-cards
-  "Return symbols for face cards"
+  "Return ranks for face cards"
   []
   '("J" "Q" "K"))
 
 (defn ace-card
-  "Return symbol for ace card"
+  "Return rank for ace card"
   []
   "A")
 
