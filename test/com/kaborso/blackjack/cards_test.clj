@@ -79,3 +79,21 @@
   (testing "Soft Hand"
     (is (= 17 (tally ["4♣" "5♥" "A♦" "7♥"])))
     (is (= 21 (tally ["7♦" "3♣" "A♥" "10♠"])))))
+
+; (deftest "more tally tests")
+;   (testing "Fifth Hit"
+; )
+;     (testing "Sixth Hit"
+; )
+;    (testing "More Than One")
+; )
+; )
+; (deftest value-tests
+;   (testing "ace-value"
+;     (is (= 11 (ace-value 7)))
+;     (is (= 11 (ace-value 10)))
+;     (is (= 1 (ace-value 20)))
+;     (is (= 1 (ace-value 17)))
+; )
+
+; (testing "value")
