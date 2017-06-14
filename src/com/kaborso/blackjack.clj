@@ -14,11 +14,11 @@
   {
    :host (env "BLACKJACK_DB_HOST")
    :port (env "BLACKJACK_DB_PORT")
-   :consumer-key (env "BLACKJACK-KEY")
-   :consumer-secret (env "BLACKJACK-SECRET")
-   :access-token (env "BLACKJACK-ACCESS-TOKEN")
-   :access-secret (env "BLACKJACK-ACCESS-SECRET")
-   :account-handle (env "BLACKJACK-ACCOUNT-HANDLE")
+   :consumer-key (env "BLACKJACK_KEY")
+   :consumer-secret (env "BLACKJACK_SECRET")
+   :access-token (env "BLACKJACK_ACCESS_TOKEN")
+   :access-secret (env "BLACKJACK_ACCESS_SECRET")
+   :account-handle (env "BLACKJACK_ACCOUNT_HANDLE")
    :reply-function twitter/reply})
 
 (defn system [config-options]
