@@ -9,11 +9,7 @@
                  [com.taoensso/carmine "2.16.0"]
                  [twitter-api "1.8.0"]
                  [org.clojure/tools.logging "0.3.1"]
-                 [org.slf4j/slf4j-log4j12 "1.7.12"]
-                 [log4j/log4j "1.2.17" :exclusions [javax.mail/mail
-                                                    javax.jms/jms
-                                                    com.sun.jmdk/jmxtools
-                                                    com.sun.jmx/jmxri]]]
+                 [ch.qos.logback/logback-classic "1.1.3"]]
   :profiles {:dev {:dependencies [[org.clojure/tools.namespace "0.2.11"]
                                   [com.stuartsierra/component.repl "0.2.0"]]
                    :source-paths ["dev"]}})
