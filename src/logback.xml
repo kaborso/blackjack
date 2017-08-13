@@ -1,16 +1,49 @@
 <configuration>
+    <appender name="stderr"
+    class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+        <level>WARN</level>
+    </filter>
+    <file>log/blackjack.err.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>log/blackjack_%d{yyyy-MM-dd}.%i.err.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>1MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%d %-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
 
-  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-    <!-- encoders are assigned the type
-         ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
-    <encoder>
-      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
-    </encoder>
-  </appender>
+    <appender name="stdout"
+    class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <filter class="ch.qos.logback.classic.filter.LevelFilter">
+        <level>ERROR</level>
+        <onMatch>DENY</onMatch>
+    </filter>
+    <filter class="ch.qos.logback.classic.filter.LevelFilter">
+        <level>WARN</level>
+        <onMatch>DENY</onMatch>
+    </filter>
+    <file>log/blackjack.out.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>log/blackjack_%d{yyyy-MM-dd}.%i.out.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>1MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%d %-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
 
-  <root level="debug">
-    <appender-ref ref="STDOUT" />
-  </root>
-
-  <logger name="com.kaborso.blackjack" level="WARN"/>
+    <root level="TRACE">
+        <appender-ref ref="stdout" />
+        <appender-ref ref="stderr" />
+    </root>
 </configuration>

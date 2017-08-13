@@ -7,6 +7,7 @@ pom.xml.asc
 /classes/
 /target/
 /checkouts/
+log/
 .lein-deps-sum
 .lein-repl-history
 .lein-plugins/
