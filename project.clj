@@ -3,6 +3,7 @@
   :url "TODO"
   :license {:name "GNU Affero General Public Licence"
             :url "http://www.gnu.org/licenses/agpl-3.0.en.html"}
+  :main ^:skip-aot com.kaborso.blackjack
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [com.stuartsierra/component "0.3.2"]
                  [org.clojure/core.async "0.3.443"]
